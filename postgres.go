@@ -14,7 +14,7 @@ type PostgresConfig struct {
 }
 
 type AppContext struct {
-	db *sql.DB
+	Db *sql.DB
 }
 
 // func main() {
@@ -38,7 +38,7 @@ type AppContext struct {
 
 // }
 
-func connectDB(config *PostgresConfig) (c *AppContext, errorMessage string) {
+func ConnectDB(config *PostgresConfig) (c *AppContext, errorMessage string) {
 
 	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s "+
 		"password=%s dbname=%s sslmode=disable",
